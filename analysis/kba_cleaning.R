@@ -95,10 +95,11 @@ for(k in 1:nrow(intersecs_all)) {
         }
       }
     #get rid of the info from the second kba/select columns 
-    kba <- kba %>% select(SitRecID, Country, ISO3, NatName, IntName, SitArea,
-                          IbaStatus, KbaStatus, AzeStatus, AddedDate, ChangeDate,
-                          Source, DelTxt, DelGeom, Shape_Leng, Shape_Area, akba, kba_notes,
-                          geometry)
+    kba <- kba %>% select(SitRecID, Region, Country, ISO3, NatName, IntName, 
+                          FinCode, SitLat, SitLong, IbaStatus, KbaStatus, 
+                          AzeStatus, AddedDate, ChangeBy, ChangeDate, Source, 
+                          DelTxt, DelGeom, KBARegion, LegacyKBA, GISArea, 
+                          KBA_Qual, Criteria, geometry, akba, kba_notes)
   }
   # now we've done all the kba adjustments, add it in
   new_kbas <- rbind(kba, new_kbas)
